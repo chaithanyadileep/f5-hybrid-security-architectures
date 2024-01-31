@@ -43,5 +43,5 @@ jwt_val_block = false
 jwt_val_report = false
 jwks = ""
 iss_claim = false
-aud_claim = false
+aud_claim = ["false"]
 exp_claim = false
