@@ -36,7 +36,7 @@ fall_through_mode_allow = false
 xc_api_val_custom = false 
 
 #XC Bot Defense
-xc_bot_def = false
+xc_bot_def = true
 
 #XC DDoS
 xc_ddos_pro = false
