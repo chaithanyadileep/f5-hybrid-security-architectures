@@ -267,7 +267,8 @@ resource "volterra_http_loadbalancer" "lb_https" {
           http_methods = ["METHOD_POST", "METHOD_PUT"]
           mitigation {
             block {
-              body = "string:///WW91ciByZXF1ZXN0IHdhcyBCTE9DS0VEID4uPAo="
+              status = "Unauthorized"
+              body   = "string:///WW91ciByZXF1ZXN0IHdhcyBCTE9DS0VEID4uPAo="
             }
           }
           path {
@@ -275,13 +276,7 @@ resource "volterra_http_loadbalancer" "lb_https" {
           }
           flow_label {
             authentication {
-              login {
-                transaction_result {
-                  failure_conditions {
-                    status = "401"
-                  }
-                }
-              }
+              login { }
             }
           }
         }
