@@ -7,7 +7,7 @@ xc_namespace = "ddos-testing"
 app_domain = "hybridtest.f5-hyd-demo.com"
 
 #XC WAF
-xc_waf_blocking = false
+xc_waf_blocking = true
 
 #XC AI/ML Settings for MUD, APIP - NOTE: Only set if using AI/ML settings from the shared namespace
 xc_app_type = []
