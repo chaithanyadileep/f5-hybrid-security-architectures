@@ -75,7 +75,7 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      - name: Terraform Apply
+      - name: Terraform Destroy
         if: github.ref == 'refs/heads/f5-xc-test-destroy' && github.event_name == 'push'
-        run: terraform apply -auto-approve -input=false
+        run: terraform destroy -auto-approve -input=false
 
