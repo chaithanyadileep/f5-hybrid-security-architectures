@@ -277,7 +277,7 @@ resource "volterra_http_loadbalancer" "lb_https" {
           flow_label {
             authentication {
               login {
-                login = true
+                transaction_result = false
               }
             }
           }
