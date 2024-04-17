@@ -27,6 +27,7 @@ resource "volterra_origin_pool" "op" {
 }
 
 resource "volterra_http_loadbalancer" "lb_https" {
+  depends_on             =  [volterra_origin_pool.op]
   name      = format("%s-xclb-%s", local.project_prefix, local.build_suffix)
   namespace = var.xc_namespace
   labels = {
@@ -239,11 +240,11 @@ resource "volterra_http_loadbalancer" "lb_https" {
         cleartext = "string:///${var.jwks}"
       }
       reserved_claims {
-        issuer                  = var.iss_claim
+        issuer                  = var.issuer_disable
         audience {
-          audiences             = var.aud_claim
+          audiences             = var.audience_disable
         }     
-        validate_period_enable  = var.exp_claim
+        validate_period_enable  = var.validate_period_disable
       }
     }
   }
@@ -267,8 +268,7 @@ resource "volterra_http_loadbalancer" "lb_https" {
           http_methods = ["METHOD_POST", "METHOD_PUT"]
           mitigation {
             block {
-              status = "Unauthorized"
-              body   = "string:///WW91ciByZXF1ZXN0IHdhcyBCTE9DS0VEID4uPAo="
+              body = "string:///WW91ciByZXF1ZXN0IHdhcyBCTE9DS0VEID4uPAo="
             }
           }
           path {
