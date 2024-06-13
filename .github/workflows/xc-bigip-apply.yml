@@ -1,4 +1,4 @@
-name: "F5XC + BIG-IP Apply"
+name: "F5XC Bot + DDoS Apply"
 
 on:
   push:
@@ -78,5 +78,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/f5-xc-test' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
-        
         
