@@ -1,11 +1,11 @@
-name: "F5XC + BIG-IP Destroy" 
+name: "F5XC + BIG-IP Apply"
 
 on:
   push:
     branches:
       - f5-xc-test-destroy
   pull_request:
-  
+
 jobs:
   terraform_xc:
     name: "F5XC WAAP"
@@ -78,4 +78,3 @@ jobs:
       - name: Terraform Destroy
         if: github.ref == 'refs/heads/f5-xc-test-destroy' && github.event_name == 'push'
         run: terraform destroy -auto-approve -input=false
-      
