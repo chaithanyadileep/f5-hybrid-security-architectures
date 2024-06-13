@@ -39,7 +39,7 @@ xc_api_val_custom = false
 xc_bot_def = true
 
 #XC DDoS
-xc_ddos_pro = false
+xc_ddos_pro = true
 
 #XC Malicious User Detection
 xc_mud = false
