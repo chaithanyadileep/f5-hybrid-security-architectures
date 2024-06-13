@@ -1,4 +1,4 @@
-name: "F5XC + BIG-IP Apply"
+name: "F5XC Bot + DDoS Apply"
 
 on:
   push:
