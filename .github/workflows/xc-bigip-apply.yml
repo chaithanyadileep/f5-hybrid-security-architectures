@@ -3,7 +3,7 @@ name: "F5XC + BIG-IP Apply"
 on:
   push:
     branches:
-      - f5-xc-test
+      - f5-xc-test-destroy
   pull_request:
 
 jobs:
