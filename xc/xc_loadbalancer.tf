@@ -281,7 +281,6 @@ resource "volterra_http_loadbalancer" "lb_https" {
             }
           }
         }
-      }
       regional_endpoint = "US"
       timeout           = 1000
     }
