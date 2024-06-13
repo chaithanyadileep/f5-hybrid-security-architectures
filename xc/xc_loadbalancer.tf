@@ -276,9 +276,7 @@ resource "volterra_http_loadbalancer" "lb_https" {
           }
           flow_label {
             authentication {
-              login {
-                disable_transaction_result = true
-              }
+              login {}
             }
           }
         }
@@ -289,7 +287,7 @@ resource "volterra_http_loadbalancer" "lb_https" {
   }
 
   #DDoS Configuration
-  dynamic "enable_ddos_detection" {
+  dynamic "ddos_mitigation_rules" {
     for_each = var.xc_ddos_pro ? [1] : []
     content {
       enable_auto_mitigation {
